@@ -41,10 +41,11 @@ Expected: first name
         }else{
             System.out.println("Header text verification FAILED");
         }
-        //4- Locate “First name” input box// on this line, we are location the web element itself
-        WebElement firstNameInput = driver.findElement(By.name("firstname"));
-
-
+        ///4- Locate “First name” input box
+        // we are locating the web element using "name" locator
+        // name attribute has "firstname" value
+        //WebElement firstNameInput = driver.findElement(By.name("firstname"));
+        WebElement firstNameInput = driver.findElement(By.className("form-control"));
 
         //5- Verify placeholder attribute’s value is as expected:
         // Expected: first name// in this line we are trying to get one of the atribute's value
@@ -57,7 +58,7 @@ Expected: first name
             System.out.println("Placeholder text verification FAILED!!!");
         }
 
-
+driver.close();
 
 
 
