@@ -42,8 +42,12 @@ Expected: first name
             System.out.println("Headertext verification FAILED");
         }
         //4- Locate “First name” input box
+        WebElement firstNameInput = driver.findElement(By.name("firstname"));
+
         //5- Verify placeholder attribute’s value is as expected:
         //Expected: first name
+        String expectedPlaceHolder = "firstname";
+        String actualPlaceHolder = firstNameInput.getAttribute("placeholder");
 
     }
 }
