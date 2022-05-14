@@ -44,8 +44,8 @@ Locate Sign in button using “tagName” locator
         passwordInput.sendKeys("incorrect password");
 
         //5. Click to sign in button
-        WebElement signInbutton = driver.findElement(By.name("button"));
-
+        WebElement signInbutton = driver.findElement(By.tagName("button"));
+        signInbutton.click();
 //6. Verify: visually “Sorry, Wrong Email or Password”
 //displayed
 //PS: Locate username input box using “className” locator
