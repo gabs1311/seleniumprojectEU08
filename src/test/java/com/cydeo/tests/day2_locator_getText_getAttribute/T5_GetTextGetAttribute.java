@@ -39,15 +39,28 @@ Expected: first name
         if (actualHeaderText.equals(expectedHeaderText)) {
             System.out.println("Header text verification PASSED");
         }else{
-            System.out.println("Headertext verification FAILED");
+            System.out.println("Header text verification FAILED");
         }
-        //4- Locate “First name” input box
+        //4- Locate “First name” input box// on this line, we are location the web element itself
         WebElement firstNameInput = driver.findElement(By.name("firstname"));
 
+
+
         //5- Verify placeholder attribute’s value is as expected:
-        //Expected: first name
-        String expectedPlaceHolder = "firstname";
+        // Expected: first name// in this line we are trying to get one of the atribute's value
+        String expectedPlaceHolder = "first name";
         String actualPlaceHolder = firstNameInput.getAttribute("placeholder");
+
+        if (actualPlaceHolder.equals(expectedPlaceHolder)){
+            System.out.println("Placeholder text verification PASSED!");
+        }else{
+            System.out.println("Placeholder text verification FAILED!!!");
+        }
+
+
+
+
+
 
     }
 }

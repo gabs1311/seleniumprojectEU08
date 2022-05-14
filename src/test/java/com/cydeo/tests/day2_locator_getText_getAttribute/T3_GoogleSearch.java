@@ -53,5 +53,7 @@ Expected: Title should start with “apple” word
             System.out.println("Title verification FAILED");
         }
 
+        driver.close();
+
     }
 }
