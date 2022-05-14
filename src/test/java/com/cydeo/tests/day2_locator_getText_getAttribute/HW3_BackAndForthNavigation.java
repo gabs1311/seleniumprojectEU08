@@ -3,6 +3,7 @@ package com.cydeo.tests.day2_locator_getText_getAttribute;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class HW3_BackAndForthNavigation {
@@ -26,6 +27,8 @@ Expected: Google
         driver.manage().window().maximize();
         //2- Go to: https://google.com
         driver.get("https://google.com");
+        WebElement agreeButton=driver.findElement(By.id("L2AGLb"));
+        agreeButton.click();
 
         //3- Click to Gmail from top right.
         driver.findElement(By.className("gb_d")).click();
