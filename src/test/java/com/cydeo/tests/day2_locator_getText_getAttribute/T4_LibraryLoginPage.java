@@ -30,8 +30,8 @@ Locate Sign in button using “tagName” locator
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
-//2. Go to http://library2.cybertekschool.com/login.html
-        driver.get(" http://library2.cybertekschool.com/login.html ");
+//2. Go to https://library2.cybertekschool.com/login.html
+        driver.get(" https://library2.cybertekschool.com/login.html ");
 
 //3. Enter username: “incorrect@email.com”
 
