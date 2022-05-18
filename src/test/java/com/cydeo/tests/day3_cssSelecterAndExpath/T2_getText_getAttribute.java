@@ -1,7 +1,9 @@
 package com.cydeo.tests.day3_cssSelecterAndExpath;
 
 import com.cydeo.utilities.WebDriverFactory;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class T2_getText_getAttribute {
     /*TC #2: NextBaseCRM, locators, getText(), getAttribute() practice
@@ -30,6 +32,7 @@ public class T2_getText_getAttribute {
 
         //3- Verify “remember me” label text is as expected:
         //Expected: Remember me on this computer
+        WebElement rememberMeLabel= driver.findElement(By.className("login-item-checkbox-label"));
         //4- Verify “forgot password” link text is as expected:
         //Expected: Forgot your password?
         //5- Verify “forgot password” href attribute’s value contains expected:
