@@ -45,15 +45,16 @@ elements.
         // Windows : alt + enter-
 
         WebElement inputPassword = driver.findElement(By.name("USER_PASSWORD"));
-
+        inputPassword.sendKeys("incorrect");
 
         //5- Click to login button.
 
-        WebElement loginButton = driver.findElement(By.className("login-inp"));
+        WebElement loginButton = driver.findElement(By.className("login-btn"));
         loginButton.click();
 
         //6- Verify error message text is as expected:
         //Expected: Incorrect login or password
+
         //PS: Inspect and decide which locator you should be using to locate web
         //elements.
 
