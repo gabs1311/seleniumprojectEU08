@@ -1,7 +1,9 @@
 package com.cydeo.tests.day3_cssSelecterAndExpath;
 
 import com.cydeo.utilities.WebDriverFactory;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class T4_cssSelectro_getText {
 
@@ -30,6 +32,15 @@ public static void main(String[] args) {
     //3- Verify “Reset password” button text is as expected:
     //Expected: Reset password
 
+// tagName[class='login-btn']
+
+    // locating reset password button using class attribute and its value
+
+   // WebElement resetPasswordButton=driver.findElement(By.cssSelector("button[class='login-btn']"));
+
+    // locating reset password button using VALUE attribute and its value
+
+    WebElement resetPasswordButton=driver.findElement(By.cssSelector("button[value='Reset password']"));
 
     //PS: Inspect and decide which locator you should be using to locate web
     //elements.
