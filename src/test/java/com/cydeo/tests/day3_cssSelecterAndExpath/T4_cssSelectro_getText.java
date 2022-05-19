@@ -42,9 +42,18 @@ public static void main(String[] args) {
 
     WebElement resetPasswordButton=driver.findElement(By.cssSelector("button[value='Reset password']"));
 
-    //PS: Inspect and decide which locator you should be using to locate web
-    //elements.
-    //PS2: Pay attention to where to get the text of this button from
+    String expectedResetPasswordButtonText = "Reset password";
+    String actualResetPasswordButtonText= resetPasswordButton.getText();
+
+    if (actualResetPasswordButtonText.equals(expectedResetPasswordButtonText)) {
+
+        System.out.println(" Button text verification PASSED");
+    } else{
+        System.out.println(" Button text verification FAILED");
+    }
+
+
+
 }
 
 
