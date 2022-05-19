@@ -19,41 +19,40 @@ PS2: Pay attention to where to get the text of this button from
 
  */
 public static void main(String[] args) {
-    //TC #4: NextBaseCRM, locators, getText(), getAttribute() practice
-    //1- Open a chrome browser
-    WebDriver driver= WebDriverFactory.getDriver(" chrome");
+    //TC #3: NextBaseCRM, locators, getText(), getAttribute() practice
+    //1- Open a Chrome browser
+    WebDriver driver = WebDriverFactory.getDriver("chrome");
     driver.manage().window().maximize();
 
+    //2- Go to: https://login1.nextbasecrm.com/
+    driver.get("https://login1.nextbasecrm.com/");
 
-    //2- Go to: https://login1.nextbasecrm.com/?forgot_password=yes
+    //3- Verify “Log in” button text is as expected:
+    //Expected: Log In
+    //WebElement signInButton = driver.findElement(By.className("login-btn"));
 
-    driver.get("https://login1.nextbasecrm.com/?forgot_password=yes");
+    //LOCATING THE SAME WEB ELEMENT USING DIFFERENT ATTRIBUTE VALUES.
+    //	                   tagName[attribute='value']
+    //	                   input[class='login-btn']
+    // LOCATED USING CLASS ATTRIBUTE
+    //WebElement signInButton = driver.findElement(By.cssSelector("input[class='login-btn']"));
+    // LOCATED USING TYPE ATTRIBUTE
+    //WebElement signInButton = driver.findElement(By.cssSelector("input[type='submit']"));
+    // LOCATED USING VALUE ATTRIBUTE
+    WebElement signInButton = driver.findElement(By.cssSelector("input[value='Log In']"));
 
-    //3- Verify “Reset password” button text is as expected:
-    //Expected: Reset password
+    String expectedButtonText = "Log In";
 
-// tagName[class='login-btn']
+    //Getting the value of the attribute "value"
+    String actualButtonText = signInButton.getAttribute("value");
 
-    // locating reset password button using class attribute and its value
+    System.out.println("actualButtonText = " + actualButtonText);
 
-   // WebElement resetPasswordButton=driver.findElement(By.cssSelector("button[class='login-btn']"));
-
-    // locating reset password button using VALUE attribute and its value
-
-    WebElement resetPasswordButton=driver.findElement(By.cssSelector("button[value='Reset password']"));
-
-    String expectedResetPasswordButtonText = "Reset password";
-    String actualResetPasswordButtonText= resetPasswordButton.getText();
-
-    if (actualResetPasswordButtonText.equals(expectedResetPasswordButtonText)) {
-
-        System.out.println(" Button text verification PASSED");
-    } else{
-        System.out.println(" Button text verification FAILED");
+    if (actualButtonText.equals(expectedButtonText)){
+        System.out.println("Log In button text verification passed!");
+    }else{
+        System.out.println("Log In button text verification failed!");
     }
-
-
-
 }
 
 
