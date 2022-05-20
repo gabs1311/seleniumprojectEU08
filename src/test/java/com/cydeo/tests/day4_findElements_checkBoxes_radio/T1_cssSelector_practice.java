@@ -44,12 +44,16 @@ XPATH locator if possible
 
         //locator only (total of 6)
         //a. “Home” link
-        // locate homeLink using cssSelector
+        // locate homeLink using cssSelector, class value
        WebElement homeLink_ex1  = driver.findElement(By.cssSelector("a[class ='nav-link']"));
 
         // locate homeLink using cssSelector#2
         WebElement homeLink_ex2  = driver.findElement(By.cssSelector("a.nav-link"));
-      WebElement homeLink_ex3  = driver.findElement(By.cssSelector("a[class ='nav-link']"));
+
+        // locate homeLink using cssSelector#3, href value
+      WebElement homeLink_ex3  = driver.findElement(By.cssSelector("a[href='/']"));
+
+
        WebElement homeLink_ex4  = driver.findElement(By.cssSelector("a[class ='nav-link']"));
         //b. “Forgot password” header
         //c. “E-mail” text
