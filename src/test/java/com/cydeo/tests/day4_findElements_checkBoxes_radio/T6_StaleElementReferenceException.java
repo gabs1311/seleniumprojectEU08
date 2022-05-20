@@ -35,7 +35,13 @@ this exception and how to handle it.
         System.out.println("cydeoLink.isDisplayed() = " + cydeoLink.isDisplayed());
 
         //4- Refresh the page.
+
+        driver.navigate().refresh();
+        // we are refreshing the web element reference by re-assigning (re-locating) the web element
+        cydeoLink=driver.findElement(By.xpath("//a[text()='CYDEO']"));
+
         //5- Verify it is displayed, again.
+        System.out.println("cydeoLink.isDisplayed() = " + cydeoLink.isDisplayed());
         //This is a simple StaleElementReferenceException to understand what is
         //this exception and how to handle it.
     }
