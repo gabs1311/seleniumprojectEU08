@@ -1,7 +1,9 @@
 package com.cydeo.tests.day4_findElements_checkBoxes_radio;
 
 import com.cydeo.utilities.WebDriverFactory;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import java.util.concurrent.TimeUnit;
 
@@ -29,6 +31,9 @@ this exception and how to handle it.
 
 
         //3- Locate “CYDEO” link, verify it is displayed.
+        WebElement cydeoLink = driver.findElement(By.xpath("//a[text()='CYDEO']"));
+        System.out.println("cydeoLink.isDisplayed() = " + cydeoLink.isDisplayed());
+
         //4- Refresh the page.
         //5- Verify it is displayed, again.
         //This is a simple StaleElementReferenceException to understand what is
