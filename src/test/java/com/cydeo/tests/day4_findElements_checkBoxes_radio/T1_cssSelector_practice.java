@@ -55,9 +55,28 @@ XPATH locator if possible
 
 
        WebElement homeLink_ex4  = driver.findElement(By.cssSelector("a[class ='nav-link']"));
+
         //b. “Forgot password” header
+
+        //Locate header using cssSelector: locate parent element and move down to h2
+        WebElement headerEx1 = driver.findElement(By.cssSelector("div.example>h2"));
+
+        //Locate header using Xpath and using element text " Forgot Password"
+
+       // WebElement headerEx2 = driver.findElement(By.xpath("//h2[text() ='Forgot Password']"));
+
+        // or written differently, but with the result
+        WebElement headerEx2 = driver.findElement(By.xpath("//h2[.='Forgot Password']"));
+
         //c. “E-mail” text
+        WebElement emailLabel= driver.findElement(By.xpath("//label[@for='email']"));
+
         //d. E-mail input box
+
+        WebElement inputBox_ex1 = driver.findElement(By.xpath("//input[@name='email']"));
+        //Locate  inputBoc using xpath contains method
+        //tagName[contains(@attribute,'value')]
+        WebElement inputBox_ex2 = driver.findElement(By.xpath("//input[@name='email']"));
         //e. “Retrieve password” button
         //f. “Powered by Cydeo text
         //4. Verify all web elements are displayed.
