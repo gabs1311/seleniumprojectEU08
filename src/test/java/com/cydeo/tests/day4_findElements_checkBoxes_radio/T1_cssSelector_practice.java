@@ -92,6 +92,18 @@ XPATH locator if possible
 
 
         //4. Verify all web elements are displayed.
+
+        System.out.println("homeLink_ex1.isDisplayed() = " + homeLink_ex1.isDisplayed());
+        System.out.println("homeLink_ex2.isDisplayed() = " + homeLink_ex2.isDisplayed());
+        System.out.println("homeLink_ex3.isDisplayed() = " + homeLink_ex3.isDisplayed());
+        System.out.println("homeLink_ex4.isDisplayed() = " + homeLink_ex4.isDisplayed());
+        System.out.println("headerEx1.isDisplayed() = " + headerEx1.isDisplayed());
+        System.out.println("headerEx2.isDisplayed() = " + headerEx2.isDisplayed());
+        System.out.println("emailLabel.isDisplayed() = " + emailLabel.isDisplayed());
+        System.out.println("inputBox_ex1.isDisplayed() = " + inputBox_ex1.isDisplayed());
+        System.out.println("poweredByCydeoText.isDisplayed() = " + poweredByCydeoText.isDisplayed());
+
+
         //First solve the task with using cssSelector only. Try to create 2 different
         //cssSelector if possible
         //Then solve the task using XPATH only. Try to create 2 different
