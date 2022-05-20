@@ -80,10 +80,17 @@ XPATH locator if possible
         WebElement inputBox_ex2 = driver.findElement(By.xpath("//input[@name='email']"));
 
         //e. “Retrieve password” button
+        //button[@type='submit' ]- if I go by type
+        //button[@class='radius'] - if I go by class
+        // if I go by id -  see below
         WebElement retrievePasswordButton = driver.findElement(By.xpath("//button[@id='form_submit']"));
 
 
         //f. “Powered by Cydeo text
+
+        WebElement poweredByCydeoText = driver.findElement(By.xpath("//div[@style='text-align: center;']"));
+
+
         //4. Verify all web elements are displayed.
         //First solve the task with using cssSelector only. Try to create 2 different
         //cssSelector if possible
