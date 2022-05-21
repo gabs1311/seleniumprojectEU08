@@ -38,19 +38,20 @@ USE XPATH LOCATOR FOR ALL WEBELEMENT LOCATORS
         addElementButton.click();
 
         //4. Verify “Delete” button is displayed after clicking.
-WebElement deleteButtonv= driver.findElement(By.xpath("//button[@class='added-manually']"));
+WebElement deleteButton= driver.findElement(By.xpath("//button[@class='added-manually']"));
 
-        System.out.println("deleteButtonv.isDisplayed() = " + deleteButtonv.isDisplayed());
+        System.out.println("deleteButton.isDisplayed() = " + deleteButton.isDisplayed());
         //5. Click to “Delete” button.
 
-        deleteButtonv.click();
+        deleteButton.click();
 
         //6. Verify “Delete” button is NOT displayed after clicking.
         try {
-            System.out.println("deleteButtonv.isDisplayed() = " + deleteButtonv.isDisplayed());
+            System.out.println("deleteButtonv.isDisplayed() = " + deleteButton.isDisplayed());
         }catch (StaleElementReferenceException e){
             System.out.println("--> Stale element reference exception is thrown");
             System.out.println("-->This means the web element is completely removed from the page");
+            System.out.println("deleteButton.isDisplayed() = false");
         }
         //USE XPATH LOCATOR FOR ALL WEBELEMENT LOCATORS
     }
