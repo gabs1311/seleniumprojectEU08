@@ -23,13 +23,14 @@ Expected: “Please select an option”
 4. Verify “State selection” default selected value is correct
 Expected: “Select a State”
      */
-WebDriver driver;
-   @BeforeMethod
+    WebDriver driver;
+
+    @BeforeMethod
     public void SetupMethod() {
 
         //1. Open Chrome browser
         //2. Go to https://practice.cydeo.com/dropdown
-       driver = WebDriverFactory.getDriver("chrome");
+        driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get(" https://practice.cydeo.com/dropdown");
@@ -45,10 +46,15 @@ WebDriver driver;
         WebElement curentlySelectedOption = simpleDropdown.getFirstSelectedOption();
         String actualSimpleDropdownText = curentlySelectedOption.getText();
         String expectedSimpleDropdownText = "Please select an option";
-        Assert.assertEquals(actualSimpleDropdownText,expectedSimpleDropdownText);
+        Assert.assertEquals(actualSimpleDropdownText, expectedSimpleDropdownText);
 
         //Expected: “Please select an option”
         //4. Verify “State selection” default selected value is correct
-        //Expected: “Select a State”
+        Select stateDropdown = new Select(driver.findElement(By.xpath("//select[@id='state']")));
+
+        //Expected: “Select a State
+        String expectedDropdownText = "Select a state";
+        String actualDropdownText = stateDropdown.getFirstSelectedOption().getText();
+        Assert.assertEquals(expectedDropdownText, actualDropdownText);
     }
 }
