@@ -13,48 +13,46 @@ import java.util.concurrent.TimeUnit;
 
 public class T4_SimpleDropdowns {
 
-    /*
-    TC#4: Verifying “Simple dropdown” and “State selection” dropdown
-default values
-1. Open Chrome browser
-2. Go to https://practice.cydeo.com/dropdown
-3. Verify “Simple dropdown” default selected value is correct
-Expected: “Please select an option”
-4. Verify “State selection” default selected value is correct
-Expected: “Select a State”
-     */
     WebDriver driver;
 
     @BeforeMethod
-    public void SetupMethod() {
-
+    public void setupMethod(){
         //1. Open Chrome browser
-        //2. Go to https://practice.cydeo.com/dropdown
         driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get(" https://practice.cydeo.com/dropdown");
+
+        //2. Go to https://practice.cydeo.com/dropdown
+        driver.get("https://practice.cydeo.com/dropdown");
     }
 
-
     @Test
-    public void SimpleDropdownTest() {
+    public void simpleDropdownTest(){
 
-
-        //3. Verify “Simple dropdown” default selected value is correct;
+        //3. Verify “Simple dropdown” default selected value is correct
         Select simpleDropdown = new Select(driver.findElement(By.xpath("//select[@id='dropdown']")));
-        WebElement curentlySelectedOption = simpleDropdown.getFirstSelectedOption();
-        String actualSimpleDropdownText = curentlySelectedOption.getText();
+
+        WebElement currentlySelectedOption = simpleDropdown.getFirstSelectedOption();
+
+        String actualSimpleDropdownText = currentlySelectedOption.getText();
         String expectedSimpleDropdownText = "Please select an option";
-        Assert.assertEquals(actualSimpleDropdownText, expectedSimpleDropdownText);
 
         //Expected: “Please select an option”
+        Assert.assertEquals(actualSimpleDropdownText, expectedSimpleDropdownText);
+
+
         //4. Verify “State selection” default selected value is correct
         Select stateDropdown = new Select(driver.findElement(By.xpath("//select[@id='state']")));
 
-        //Expected: “Select a State
-        String expectedDropdownText = "Select a state";
-        String actualDropdownText = stateDropdown.getFirstSelectedOption().getText();
-        Assert.assertEquals(expectedDropdownText, actualDropdownText);
+        //Expected: “Select a State”
+        String expectedStateDropdownText = "Select a State";
+
+        String actualStateDropdownText = stateDropdown.getFirstSelectedOption().getText();
+
+        Assert.assertEquals(actualStateDropdownText, expectedStateDropdownText);
+
+        //Assert.assertEquals(stateDropdown.getFirstSelectedOption().getText(), "Select a State");
+
     }
+
 }
