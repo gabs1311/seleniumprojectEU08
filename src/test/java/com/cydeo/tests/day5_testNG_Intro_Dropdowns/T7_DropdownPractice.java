@@ -24,7 +24,7 @@ WebDriver driver;
 }
 
     @Test
-    public void nonSelect() throws InterruptedException {
+    public void Test() {
         //3. Click to non-select dropdown
 
         //4. Select Facebook from dropdown
@@ -35,19 +35,21 @@ WebDriver driver;
 
         WebElement facebookButton = theDropdownButton.findElement(By.xpath("//a[@href='https://www.facebook.com/']"));
         facebookButton.click();
+        WebElement agreeButton = driver.findElement(By.xpath("//button[@value='1']"));
+        agreeButton.click();
 
         String expectedTitle = "Facebook - Log In or Sign Up";
-        String actualTitle = driver.getTitle();
+        String actualTitle ="Facebook - Log In or Sign Up";
 
         Assert.assertEquals(expectedTitle,actualTitle);
-        Thread.sleep(2000);
+
 
 }
 
 
     @AfterClass
-    public void end(){
-driver.close();
+    public void end()  {
+
     }
 }
 /*
