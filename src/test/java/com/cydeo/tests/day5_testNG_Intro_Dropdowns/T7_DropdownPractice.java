@@ -35,7 +35,7 @@ WebDriver driver;
 
         WebElement facebookButton = theDropdownButton.findElement(By.xpath("//a[@href='https://www.facebook.com/']"));
         facebookButton.click();
-        WebElement agreeButton = driver.findElement(By.xpath("//button[@value='1']"));
+        WebElement agreeButton = driver.findElement(By.xpath("(//button[@value='1'])[3]"));
         agreeButton.click();
 
         String expectedTitle = "Facebook - Log In or Sign Up";
@@ -48,8 +48,9 @@ WebDriver driver;
 
 
     @AfterClass
-    public void end()  {
-
+    public void end() throws InterruptedException {
+       Thread.sleep(2000);
+    driver.close();
     }
 }
 /*
