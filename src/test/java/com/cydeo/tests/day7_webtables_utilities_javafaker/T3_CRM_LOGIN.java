@@ -30,9 +30,24 @@ public class T3_CRM_LOGIN {
     //3. Enter valid username
 
     WebElement inputUserName = driver.findElement(By.xpath("//input[@name='USER_LOGIN']"));
+    inputUserName.sendKeys("helpdesk1@cybertekschool.com");
+
+
+    //helpdesk1@cybertekschool.com  UserUser
+    //Helpdesk2@cybertekschool.com  UserUser
+
+
     //4. Enter valid password
+
     WebElement inputPassword= driver.findElement(By.xpath(" USER_PASSWORD"));
+     inputPassword.sendKeys(" UserUser");
+
+    // UserUser
     //5. Click to `Log In` button
+
+    WebElement logInButton = driver.findElement(By.xpath("//input[@value='Log In']"));
+    logInButton.click();
+
     //6. Verify title is as expected:
 
 }
