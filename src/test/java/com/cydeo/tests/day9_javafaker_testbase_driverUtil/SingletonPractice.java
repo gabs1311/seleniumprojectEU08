@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 public class SingletonPractice {
 
-    @Test
+    @Test(priority = 2)
     public void singleton_understand_test1(){
 
         String str1 = Singleton.getWord();
@@ -16,7 +16,7 @@ public class SingletonPractice {
         String str3 = Singleton.getWord();
         System.out.println("str1 = " + str3);
     }
-    @Test
+    @Test (priority = 1)
     public void singleton_understanding_test2(){
         String str4 = Singleton.getWord();
         System.out.println("str1 = " + str4);
