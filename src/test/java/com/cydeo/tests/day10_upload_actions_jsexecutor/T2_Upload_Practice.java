@@ -17,12 +17,15 @@ public class T2_Upload_Practice {
 
         //2. Find some small file from your computer, and get the path of it.
 
-        String path = "D:\\Cybertech school\\Project\\sprint 2\\rsz_british_short_hair.jpg";
+        String path = "D:\\Cybertech school\\Project\\sprint 2\\rsz_british_short_hair.jpg";// located the file from the computer
 
         //3. Upload the file.
-        WebElement fileUpload = Driver.getDriver().findElement(By.id("file-upload"));
+        WebElement fileUpload = Driver.getDriver().findElement(By.id("file-upload"));// uploaded the element
         BrowserUtils.sleep(2);
         fileUpload.sendKeys(path);
+
+        WebElement uploadButton = Driver.getDriver().findElement(By.id("file-submit"));
+       uploadButton.click();
 
 
         //4. Assert:
