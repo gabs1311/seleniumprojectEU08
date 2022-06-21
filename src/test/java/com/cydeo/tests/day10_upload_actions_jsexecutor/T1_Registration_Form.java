@@ -5,6 +5,7 @@ import com.cydeo.utilities.Driver;
 import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
 public class T1_Registration_Form {
@@ -48,16 +49,37 @@ public class T1_Registration_Form {
        WebElement inputPassword = Driver.getDriver().findElement(By.xpath("//input[@name='password']"));
         inputPassword.sendKeys(faker.numerify("########"));
        // faker.internet().password(); or i can use this
+
+
         //8. Enter phone number
-      //  WebElement inputEmail = Driver.getDriver().findElement(By.xpath("//input[@name='email']"));
+        WebElement inputPhone = Driver.getDriver().findElement(By.xpath("//input[@name='phone']"));
+       inputPhone.sendKeys(faker.numerify("571-###-####"));// or ###-###-####
+
         //9. Select a gender from radio buttons
+        WebElement inputGender=Driver.getDriver().findElement(By.xpath("//input[@gender='female']"));
+       inputGender.click();// because I need it to click the female button
+
         //10. Enter date of birth
+        WebElement inputBirthday=Driver.getDriver().findElement(By.xpath("//input[@name='birthday']"));
+      // faker.number().numberBetween(2004,1920);
+        inputBirthday.sendKeys("11/13/1979");
+
+
+
+
         //11. Select Department/Office
+        Select departmentDropdown = new Select(Driver.getDriver().findElement(By.xpath("//select[@name='department']")));
+        departmentDropdown.selectByIndex(faker.number().numberBetween(0,9));
+       // WebElement inputGender=Driver.getDriver().findElement(By.xpath("//input[@gender='female']"));
         //12. Select Job Title
+        //WebElement inputGender=Driver.getDriver().findElement(By.xpath("//input[@gender='female']"));
         //13. Select programming language from checkboxes
+      //  WebElement inputGender=Driver.getDriver().findElement(By.xpath("//input[@gender='female']"));
         //14. Click to sign up button
+        //WebElement inputGender=Driver.getDriver().findElement(By.xpath("//input[@gender='female']"));
         //15. Verify success message “You’ve successfully completed registration.” is
         //displayed.
+       // WebElement inputGender=Driver.getDriver().findElement(By.xpath("//input[@gender='female']"));
         //Note:
         //1. Use new Driver utility class and method
         //2. User JavaFaker when possible
