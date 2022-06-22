@@ -7,7 +7,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
-public class T7_Scroll_JSExecutor {
+public class T6_Scroll_JSExecutor {
 
 @Test
     public void task7_scroll_task(){
