@@ -1,9 +1,10 @@
-package com.cydeo.tests.day10_upload_actions_jsexecutor;
+package com.cydeo.tests.day11_actions_jsexecutor_practice;
 
 import com.cydeo.utilities.Driver;
+import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
 
-public class H_T4_5_ScrollingPractice {
+public class ActionsPractices {
 
     @Test
     public void scrolling_practice_test(){
@@ -13,6 +14,8 @@ public class H_T4_5_ScrollingPractice {
         //2- Go to: https://practice.cydeo.com/
         Driver.getDriver().get("https://practice.cydeo.com/");
         //3- Scroll down to “Powered by CYDEO”
+        JavascriptExecutor js= (JavascriptExecutor) Driver.getDriver();
+      js.executeScript("window.scrollBy()");
 
         //4- Scroll using Actions class “moveTo(element)” method
         //TC #5: Scroll practice 2
