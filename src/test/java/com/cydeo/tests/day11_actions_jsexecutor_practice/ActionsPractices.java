@@ -34,7 +34,28 @@ public class ActionsPractices {
         actions.sendKeys(Keys.PAGE_UP, Keys.PAGE_UP).perform();// it is not for sure it will go
         // all the way up to the link, so I use Keys.PAGE_UP twice, but it looks it is not enough
 
+        //Driver.getDriver().quit();
+        Driver.closeDriver();
+    }
 
+
+    @Test
+    public void test2(){
+        Driver.getDriver().get("https://practice.cydeo.com/");
+        Driver.closeDriver();
+    }
+
+
+    @Test
+    public void test3(){
+        Driver.getDriver().get("https://practice.cydeo.com/");
+        Driver.closeDriver();
+    }
+
+    @Test
+    public void test4(){
+        Driver.getDriver().get("https://practice.cydeo.com/");
+        Driver.closeDriver();
     }
 }
 /*
