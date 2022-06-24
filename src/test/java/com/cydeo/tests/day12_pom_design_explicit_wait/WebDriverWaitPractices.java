@@ -1,8 +1,10 @@
 package com.cydeo.tests.day12_pom_design_explicit_wait;
 
+import com.cydeo.pages.DynamicLoad7Page;
 import com.cydeo.utilities.Driver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class WebDriverWaitPractices {
@@ -24,8 +26,33 @@ public class WebDriverWaitPractices {
         //use the "wait" object to create our expected condition
         wait.until(ExpectedConditions.titleIs("Dynamic title"));
 
+       // create object of DynamicLoad7Page to reach and assert web elements
+        DynamicLoad7Page dynamicLoad7Page=new DynamicLoad7Page();
         //3. Assert: Message “Done” is displayed.
+
+        Assert.assertTrue(dynamicLoad7Page.doneMessage.isDisplayed());
+
         //4. Assert: Image is displayed.
+
+        Assert.assertTrue(dynamicLoad7Page.spongeBobImage.isDisplayed());
         //Note: Follow POM
+    }
+
+
+    @Test
+    public void dynamic_load_1_test(){
+
+        //TC#5 : Dynamically Loaded Page Elements 1
+        //1. Go to https://practice.cydeo.com/dynamic_loading/1
+        Driver.getDriver().get(" https://practice.cydeo.com/dynamic_loading/1");
+        //2. Click to start
+
+        //3. Wait until loading bar disappears
+        //4. Assert username inputbox is displayed
+        //5. Enter username: tomsmith
+        //6. Enter password: incorrectpassword
+        //7. Click to Submit button
+        //8. Assert “Your password is invalid!” text is displayed.
+        //Note: Follow POM Design Pattern
     }
 }
