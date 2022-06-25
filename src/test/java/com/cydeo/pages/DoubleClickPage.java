@@ -15,4 +15,7 @@ public class DoubleClickPage {
     @FindBy(id = "demo")
     public WebElement textToDoubleClick;
 
+
+    @FindBy(id="accept-choices")
+    public WebElement IagreeButton;
 }
