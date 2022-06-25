@@ -32,4 +32,6 @@ public class DynamicControlsPage {
     @FindBy(css = "input[type='text']")
     public WebElement inputBox;
 
+
+
 }
