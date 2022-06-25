@@ -4,6 +4,7 @@ import com.cydeo.pages.DoubleClickPage;
 import com.cydeo.utilities.Driver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class T1_DoubleClick {
@@ -32,6 +33,12 @@ public class T1_DoubleClick {
         actions.doubleClick(doubleClickPage.textToDoubleClick).perform();
         //4. Assert: Text’s “style” attribute value contains “red”.
         System.out.println("doubleClickPage.textToDoubleClick.getAttribute(\"style\") = " + doubleClickPage.textToDoubleClick.getAttribute("style"));
+
+      String actualStyleAttributeValue =doubleClickPage.textToDoubleClick.getAttribute("style");
+      String expectedInStyleAttribute="red";
+
+        Assert.assertTrue(actualStyleAttributeValue.contains(expectedInStyleAttribute));
+
         //NOTE: FOLLOW POM
 
     }
